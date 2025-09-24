@@ -1,0 +1,18 @@
+# Binaries
+/bin/
+/build/
+/*.exe
+
+# Test files
+*.test
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+
+# Go modules cache
+/pkg/
