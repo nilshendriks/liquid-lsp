@@ -17,3 +17,15 @@ func TestEncode(t *testing.T) {
 		t.Fatalf("Expected: %s, Actual: %s", expected, actual)
 	}
 }
+
+func TestDecode(t *testing.T) {
+	incomingMessage := "Content-Length: 15\r\n\r\n{\"Method\":true}"
+	method, contentLength, err := rpc.DecodeMessage([]byte(incomingMessage))
+	if err != nil {
+		t.Fatalf("Unexpected error: %s", err)
+	}
+
+	if contentLength != 15 {
+		t.Fatalf("Expected content length 15, got %d", contentLength)
+	}
+}
